@@ -1,0 +1,31 @@
+[package]
+name = "eepycat"
+version = "0.1.0"
+license = "GPL-3.0-or-later"
+description = "He slow cause he eepy"
+authors = ["Joakim Soderlund <joakim.soderlund@gmail.com>"]
+repository = "https://github.com/JockeTF/eepycat"
+readme = "readme.md"
+edition = "2024"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true
+
+[dependencies]
+fastrand = "2.4.1"
+walkdir = "2.5.0"
+
+[dependencies.syntect]
+version = "5.3.0"
+default-features = false
+features = [
+  "default-syntaxes",
+  "default-themes",
+  "regex-fancy",
+]
+
+[lints.clippy]
+pedantic = "warn"
